@@ -1,0 +1,87 @@
+  import 'package:flutter/material.dart';
+
+  void main() {
+    runApp(MyApp());
+  }
+
+  class MyApp extends StatefulWidget {
+    const MyApp({super.key});
+
+    @override
+    MyAppState createState() => MyAppState();
+  }
+
+  class MyAppState extends State<MyApp> {
+    int counter = 0;
+    String message = '';
+
+    void incrementDataWithContext(BuildContext context) {
+      setState(() {
+        if (counter < 5) {
+          counter++;
+          message = '';
+        } else {
+          message = 'Counter cannot be incremented beyond 5!';
+        }
+      });
+    }
+
+    void decrementData() {
+      setState(() {
+        if (counter > -5) {
+          counter--;
+          message = '';
+        } else {
+          message = 'Counter cannot be decremented below -5!';
+        }
+      });
+    }
+
+    void resetdata() {
+      setState(() {
+        counter = 0;
+        message = '';
+      });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('My App'),
+            backgroundColor: Colors.teal,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Counter: $counter", style: TextStyle(fontSize: 24)),
+                if (message.isNotEmpty)
+                  Text(message, style: TextStyle(color: Colors.red)),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    incrementDataWithContext(context);
+                  },
+                  child: Text("Increment"),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    decrementData();
+                  },
+                  child: Text("Decrement"),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: resetdata,
+                  child: Text("Reset"),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+  }
