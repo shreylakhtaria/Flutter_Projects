@@ -1,16 +1,9 @@
-# mini_calculator
+# Final_Exam_23CS039
+Simple Flutter app for the final exam (23CS039).
 
-A new Flutter project.
+How it works: UI collects user input, app logic validates and saves state locally, then displays results and feedback.
 
-## Getting Started
+Run: install Flutter, run `flutter pub get` then `flutter run`.
 
-This project is a starting point for a Flutter application.
+Structure: `lib/main.dart` (entry), `models/`, `widgets/`, `screens/`.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
